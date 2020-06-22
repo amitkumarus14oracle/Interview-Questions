@@ -1,0 +1,7 @@
+Given an Employee table with field Id, name, age, manager_Id,  Write a sql query to find the manager's name;
+
+Sol :
+Will give you manager name as asked.
+1. Select name from Employee where id in (select manager_id from employee where manager_id is not null);
+Will give you employee name with its manager.
+2. Select e1.name , e2.name as manager_name from Employee e1 left join Employee e2 on e1.manager_id = e2.id;
